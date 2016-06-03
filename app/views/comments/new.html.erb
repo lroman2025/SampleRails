@@ -1,0 +1,33 @@
+<h1>New comment</h1>
+<%= form_for :comment, url: comments_path do |f| %>
+
+ <table>
+  <tr>
+   <th>Title</th>
+   <th>Text</th>
+  </tr>
+ 
+  <% @comments.each do |comment| %>
+   <tr>
+    <td><%= comment.title %></td>
+    <td><%= comment.text %></td>
+   </tr>
+  <% end %> 
+ </table>
+</br>
+
+<p>form</p>
+ <p>
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </p>
+ 
+  <p>
+    <%= f.label :text %><br>
+    <%= f.text_area :text %>
+  </p>
+ 
+  <p>
+    <%= f.submit %>
+  </p>
+<% end %>
